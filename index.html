@@ -97,6 +97,12 @@ section.agenda { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); 
 .slot-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 .slots .rounds { margin-top: 2px; }
 .nav-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.nav-row a { padding: 8px 10px; }
+.nav-row a .k { font-size: 0.75rem; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.nav-row { grid-template-columns: max-content minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 340px) { .nav-row a .k { white-space: normal; } }
+@media (min-width: 560px) { .nav-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.nav-row a[aria-current="true"] .k { color: var(--paper); }
 .lc-tools { padding-block: 28px 0; }
 
 </style>
@@ -123,8 +129,8 @@ section.agenda { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); 
 <div class="wrap">
 <div class="nav-row">
 <a href="#agenda" aria-current="true"><span class="n">Agenda</span><span class="t">Full day</span></a>
-<a href="#session-1" aria-current="false"><span class="n">Session 1</span><span class="t">11:15 AM</span></a>
-<a href="#session-2" aria-current="false"><span class="n">Session 2</span><span class="t">1:10 PM</span></a>
+<a href="#session-1" aria-current="false"><span class="k">Learning Circles</span> <span class="n">Session 1</span><span class="t">11:15 AM</span></a>
+<a href="#session-2" aria-current="false"><span class="k">Learning Circles</span> <span class="n">Session 2</span><span class="t">1:10 PM</span></a>
 </div>
 </div>
 </nav>
