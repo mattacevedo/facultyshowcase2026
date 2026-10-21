@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Faculty Showcase 2026 Program</title>
+<meta name="description" content="Program for the Faculty Showcase 2026, November 6, 2026, Shalala Student Center, 3rd Floor Ballrooms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+<style>
+body { margin: 0; }
+img { max-width: 100%; }
+
+/* Layout: one reading column, sticky session switcher, tables as ruled entries like the printed program */
+:root {
+  --paper: #ffffff;
+  --ink: #1d2b24;
+  --muted: #3c4d44;
+  --green: #005030;
+  --orange: #F47321;
+  --orange-text: #C35009;
+  --rule: #c9dcc1;
+  --tint: #f3f7f2;
+  --font: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; font-variant-numeric: tabular-nums; -webkit-text-size-adjust: 100%; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.band { height: 8px; background: var(--green); }
+.wrap { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.top { padding-block: 24px 0; }
+.head-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; padding-bottom: 20px; }
+.logo { display: block; width: 156px; height: auto; max-width: 100%; }
+.head-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+h1 { margin: 0; font-size: 1.875rem; line-height: 1.05; font-weight: 700; color: var(--green); text-wrap: balance; }
+.when { font-size: 1.0625rem; font-weight: 600; color: var(--ink); margin-top: 4px; }
+.where { font-size: 0.9375rem; color: var(--muted); }
+.orange-rule { height: 3px; background: var(--orange); }
+
+nav.sessions { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.nav-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-block: 10px; }
+.nav-row a { display: flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--rule); text-decoration: none; color: var(--green); background: var(--paper); }
+.nav-row a .n { font-weight: 700; font-size: 0.9375rem; line-height: 1.2; }
+.nav-row a .t { font-size: 0.8125rem; color: var(--orange-text); font-weight: 600; line-height: 1.3; }
+.nav-row a[aria-current="true"] { background: var(--green); border-color: var(--green); color: var(--paper); }
+.nav-row a[aria-current="true"] .t { color: var(--paper); }
+.nav-row a:focus-visible, .toggle input:focus-visible + .track { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+.tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-block: 14px 0; font-size: 0.875rem; color: var(--muted); }
+.toggle { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 600; color: var(--green); min-height: 44px; }
+.toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.track { position: relative; width: 40px; height: 24px; border-radius: 12px; background: var(--rule); transition: background .15s; flex-shrink: 0; }
+.track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--paper); transition: transform .15s; }
+.toggle input:checked + .track { background: var(--green); }
+.toggle input:checked + .track::after { transform: translateX(16px); }
+
+section.session { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); padding-top: 28px; }
+.s-head { padding-bottom: 14px; border-bottom: 2px solid var(--green); }
+h2 { margin: 0; font-size: 1.375rem; line-height: 1.2; font-weight: 700; color: var(--green); text-wrap: balance; }
+.s-time { margin-top: 4px; font-size: 1rem; font-weight: 600; color: var(--orange-text); }
+.rounds { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 16px; margin: 10px 0 0; font-size: 0.9375rem; }
+.rounds dt { margin: 0; color: var(--green); }
+.rounds dt.r { font-weight: 600; }
+.rounds dd { margin: 0; color: var(--orange-text); }
+
+.tables { list-style: none; margin: 0; padding: 0; }
+.tables > li { padding-block: 20px; border-bottom: 1px solid var(--rule); scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); }
+.tables > li:last-child { border-bottom: 0; }
+.label { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.02em; color: var(--orange-text); }
+h3 { margin: 4px 0 0; font-size: 1.1875rem; line-height: 1.3; font-weight: 600; color: var(--green); text-wrap: balance; }
+.who { margin: 6px 0 0; font-size: 0.9375rem; line-height: 1.45; font-weight: 500; color: var(--ink); }
+.quote { margin: 12px 0 0; font-size: 0.9375rem; font-style: italic; color: var(--green); }
+.quote span { font-style: normal; color: var(--muted); }
+.desc { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--muted); max-width: 65ch; text-wrap: pretty; }
+body.compact .quote, body.compact .desc { display: none; }
+body.compact .tables > li { padding-block: 14px; }
+
+footer.end { margin-top: 24px; }
+@media (prefers-reduced-motion: reduce) { .track, .track::after { transition: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+section.agenda { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); padding-top: 28px; }
+.a-head { padding-bottom: 12px; border-bottom: 2px solid var(--green); }
+.slots { list-style: none; margin: 0; padding: 0; }
+.slots > li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding-block: 16px; border-bottom: 1px solid var(--rule); }
+.slots > li:last-child { border-bottom: 0; }
+@media (min-width: 560px) { .slots > li { grid-template-columns: 172px minmax(0, 1fr); gap: 20px; } }
+.slot-time { font-size: 0.9375rem; font-weight: 600; color: var(--orange-text); }
+.slot-body { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.slot-title { margin: 0; font-size: 1.1875rem; line-height: 1.3; font-weight: 600; color: var(--green); }
+.slot-sub { margin: 3px 0 0; font-size: 0.9375rem; line-height: 1.45; color: var(--muted); }
+.slot-link { align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 0.9375rem; font-weight: 600; color: var(--green); text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.slot-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.slots .rounds { margin-top: 2px; }
+.nav-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lc-tools { padding-block: 28px 0; }
+
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"></div>
+
+<header class="top">
+<div class="wrap">
+<div class="head-row">
+<img class="logo" src="logo.png" alt="Faculty Showcase 2026" width="360" height="216">
+<div class="head-text">
+<h1>Program</h1>
+<div class="when">November 6, 2026</div>
+<div class="where">Shalala Student Center, 3rd Floor Ballrooms</div>
+</div>
+</div>
+<div class="orange-rule" aria-hidden="true"></div>
+</div>
+</header>
+
+<nav class="sessions" aria-label="Program sections">
+<div class="wrap">
+<div class="nav-row">
+<a href="#agenda" aria-current="true"><span class="n">Agenda</span><span class="t">Full day</span></a>
+<a href="#session-1" aria-current="false"><span class="n">Session 1</span><span class="t">11:15 AM</span></a>
+<a href="#session-2" aria-current="false"><span class="n">Session 2</span><span class="t">1:10 PM</span></a>
+</div>
+</div>
+</nav>
+
+<main class="wrap">
+<section class="agenda" id="agenda" aria-labelledby="h-agenda">
+<div class="a-head"><h2 id="h-agenda">Agenda</h2></div>
+<ol class="slots">
+<li>
+<div class="slot-time">9:30 to 10:00 AM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Registration and Breakfast</h3>
+</div>
+</div>
+</li>
+<li>
+<div class="slot-time">10:00 to 10:15 AM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Welcome</h3>
+<p class="slot-sub">Matt Acevedo, Assistant Provost, Educational Strategy; Director, Platform for Excellence in Teaching and Learning</p>
+</div>
+<div>
+<h3 class="slot-title">Opening Remarks</h3>
+<p class="slot-sub">Joel Samuels, Executive Vice President for Academic Affairs &amp; Provost</p>
+</div>
+</div>
+</li>
+<li>
+<div class="slot-time">10:15 to 11:15 AM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Keynote Presentation</h3>
+<p class="slot-sub">Ben Lauren, Professor and Chairperson, Department of Writing Studies; Director, Innovation and Society</p>
+</div>
+</div>
+</li>
+<li>
+<div class="slot-time">11:15 AM to 12:25 PM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Learning Circles Session 1</h3>
+<dl class="rounds">
+<dt class="r">Round 1</dt><dd>11:15 to 11:45 AM</dd>
+<dt class="">Transition Break</dt><dd>11:45 to 11:55 AM</dd>
+<dt class="r">Round 2</dt><dd>11:55 AM to 12:25 PM</dd>
+</dl>
+</div>
+<a class="slot-link" href="#session-1">See all 7 tables</a>
+</div>
+</li>
+<li>
+<div class="slot-time">12:25 to 1:10 PM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Lunch and Poster Presentations</h3>
+</div>
+</div>
+</li>
+<li>
+<div class="slot-time">1:10 to 2:20 PM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Learning Circles Session 2</h3>
+<dl class="rounds">
+<dt class="r">Round 1</dt><dd>1:10 to 1:40 PM</dd>
+<dt class="">Transition Break</dt><dd>1:40 to 1:50 PM</dd>
+<dt class="r">Round 2</dt><dd>1:50 to 2:20 PM</dd>
+</dl>
+</div>
+<a class="slot-link" href="#session-2">See all 6 tables</a>
+</div>
+</li>
+<li>
+<div class="slot-time">2:20 to 2:30 PM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Closing Remarks</h3>
+</div>
+</div>
+</li>
+<li>
+<div class="slot-time">2:30 PM</div>
+<div class="slot-body">
+<div>
+<h3 class="slot-title">Networking Dessert</h3>
+<p class="slot-sub">Featuring Insomnia Cookies. Vegan and gluten-free options available.</p>
+</div>
+</div>
+</li>
+</ol>
+</section>
+
+<div class="tools lc-tools">
+<label class="toggle" for="desc-toggle"><input type="checkbox" id="desc-toggle" checked><span class="track" aria-hidden="true"></span>Show Learning Circle descriptions</label>
+</div>
+
+<section class="session" id="session-1" aria-labelledby="h-session-1">
+<div class="s-head">
+<h2 id="h-session-1">Learning Circles Session 1</h2>
+<div class="s-time">11:15 AM to 12:25 PM</div>
+<dl class="rounds">
+<dt class="r">Round 1</dt><dd>11:15 to 11:45 AM</dd>
+<dt class="">Transition Break</dt><dd>11:45 to 11:55 AM</dd>
+<dt class="r">Round 2</dt><dd>11:55 AM to 12:25 PM</dd>
+</dl>
+</div>
+<ol class="tables">
+<li id="s1-table-1">
+<div class="label">Table 1</div>
+<h3>Beyond the Lecture: Creating More Engaging and Participatory Learning Experiences</h3>
+<p class="who">Oscar E. Diaz, Arts and Sciences</p>
+<p class="desc">College students bring valuable personal, professional, and academic experiences into the classroom, but how can faculty use those experiences to deepen learning? Drawing from teaching at the University of Miami and Florida International University, this interactive session explores practical ways to move beyond traditional content delivery and create engaging, participatory learning experiences. Grounded in active and experiential learning, participants will explore strategies that connect prior knowledge to course concepts, promote collaboration, increase participation, and create psychological safety. Faculty will leave with practical techniques they can immediately apply in their classrooms.</p>
+</li>
+<li id="s1-table-2">
+<div class="label">Table 2</div>
+<h3>Dear Faculty: A Conversation with Students About Canvas</h3>
+<p class="who">Gemma Henderson, Carolina Juara, and Sabrina Reina, Academic Technologies</p>
+<p class="desc">This interactive table invites faculty into a conversation with students about the small design choices that shape their day-to-day learning experience. Through student perspectives and facilitated prompts, participants will explore what helps students find what they need, understand expectations, monitor their progress, and feel connected to their instructor. Participants will leave with one small change they can make in their own Canvas course.</p>
+</li>
+<li id="s1-table-3">
+<div class="label">Table 3</div>
+<h3>Partners in Education (PiE): A Case for Every Teaching and Learning Practice</h3>
+<p class="who">Kimberly McGrath Moreira, Writing Studies, and Aniya Martinez (student), Criminology and Psychology with Minor in Counseling</p>
+<p class="quote">“I didn’t know what I was getting into while becoming a teacher to a teacher.” <span>- Aniya Martinez ’28</span></p>
+<p class="desc">Join our learning circle for a case study of one semester of pedagogical partnership between an undergraduate student and a Writing Studies faculty member in a first-year writing course. In this small-group conversation, we’ll share our model and lessons learned, then explore with you how partnership can foster resilience and transformative learning in your own courses. Partnerships now connect faculty and students across architecture, math, nursing, physical therapy, business, engineering, and more, and any faculty member can take part. Applications for spring 2027 partnerships are due November 13, 2026.</p>
+</li>
+<li id="s1-table-4">
+<div class="label">Table 4</div>
+<h3>Google Gemini Notebook (NotebookLM) and Canvas LMS Hacks: Enhancing Teaching Efficiency and Student Engagement using R.A.D.A.R. Learning Model</h3>
+<p class="who">Hien Nguyen, Computer Science</p>
+<p class="desc">Artificial intelligence (AI) is transforming higher education by enhancing teaching, learning, and student engagement. This session demonstrates how faculty can leverage Google Gemini Notebook and Canvas LMS to streamline course development, generate learning materials, and create AI-assisted quizzes that can be imported into Canvas. Participants will explore practical workflows, tips, and best practices that reduce preparation time while increasing student participation. The session will also introduce the RADAR Learning Model, developed from the DynaFlip teaching and learning strategy, to support interactive and personalized learning. Join us to discover practical approaches for integrating AI into courses and improving student success.</p>
+</li>
+<li id="s1-table-5">
+<div class="label">Table 5</div>
+<h3>Art as a Competency-Building Method: Teaching French Through Visual Thinking Strategies (VTS)</h3>
+<p class="who">Viviana Pezzullo and Valerie Wainer Goldstein (student), Modern Languages</p>
+<p class="desc">Creativity and imagination are often perceived as fixed, innate traits rather than competencies that students can develop. This Learning Circle demonstrates how integrating art (specifically through the Visual Thinking Strategies, or VTS, framework) transforms the classroom into an interactive environment for developing essential skills, including rigorous observation, empathy, and active teamwork, while instilling a growth mindset. Participants will first examine practical models of art integration across various French courses. Next, the discussion will pivot to a VTS demonstration and conclude with a guided discussion on the pedagogical benefits of VTS and actionable strategies for applying this approach across diverse academic disciplines.</p>
+</li>
+<li id="s1-table-6">
+<div class="label">Table 6</div>
+<h3>What Do Hedgehogs Eat? A Timed Digital Humanities Activity</h3>
+<p class="who">Samantha Phillips, Writing Studies</p>
+<p class="desc">Based on my chapter in <i>The Digital Humanities Cookbook</i> (ACRL), I propose a dynamic exercise of a fast-paced hunt to find accurate information on what wild hedgehogs eat. In this case, I will lead participants in a session. Participants will have free rein on their phones, and then will journey back in time to imagine what this informational search would have entailed in a pre-digital era. This activity can also be extended to imagine the current digital divide as well. The exercise highlights the collaborative nature of internet usage and helps students recognize the privilege and responsibilities of rapid internet access. This activity uses concepts from the ACRL Framework: searching has meaning, value, and is intentional.</p>
+</li>
+<li id="s1-table-7">
+<div class="label">Table 7</div>
+<h3>Slopes Without Borders: Engineering a Cross-Cultural COIL Experience</h3>
+<p class="who">Derin Ural, Civil and Architectural Engineering</p>
+<p class="desc">This session outlines an engineering Collaborative Online International Learning (COIL) experience pairing undergraduate students from the University of Miami and the Universidad del Valle in Guatemala. In mixed teams, students evaluated the stability of real slope sites in Guatemala. Prior to collaborating online, students immersed themselves in Guatemalan culture by visiting a Coral Gables Museum exhibit and meeting Consulate officials to discuss local engineering practices. Eleven four-student teams mapped and assessed slope safety, culminating in excellent final technical posters and memos.</p>
+</li>
+</ol>
+</section>
+
+<section class="session" id="session-2" aria-labelledby="h-session-2">
+<div class="s-head">
+<h2 id="h-session-2">Learning Circles Session 2</h2>
+<div class="s-time">1:10 to 2:20 PM</div>
+<dl class="rounds">
+<dt class="r">Round 1</dt><dd>1:10 to 1:40 PM</dd>
+<dt class="">Transition Break</dt><dd>1:40 to 1:50 PM</dd>
+<dt class="r">Round 2</dt><dd>1:50 to 2:20 PM</dd>
+</dl>
+</div>
+<ol class="tables">
+<li id="s2-table-1">
+<div class="label">Table 1</div>
+<h3>Beyond the Classroom: Making Languages a Living Part of Campus Life</h3>
+<p class="who">Lorella Di Gregorio, Modern Languages and Literatures + Housing and Residential Life</p>
+<p class="desc">As Residential Faculty at the University of Miami, I extend language learning beyond the classroom by creating opportunities for students to engage with languages and cultures through community-building, cultural events, informal conversations, and meaningful faculty-student interactions. From coffee hours and language nights to cultural celebrations and interdisciplinary activities, these initiatives make languages visible, accessible, and relevant to students’ everyday lives. This presentation explores how residential life can complement classroom instruction, foster intercultural curiosity, strengthen students’ sense of belonging, and demonstrate the value of multilingualism in an increasingly interconnected world.</p>
+</li>
+<li id="s2-table-2">
+<div class="label">Table 2</div>
+<h3>From Teaching Ideas to Pedagogical Research: Exploring SPRI</h3>
+<p class="who">Nadia Gal, Mathematics, and Nina Miville, Industrial and Systems Engineering</p>
+<p class="desc">Curious about turning a teaching idea into a research project? Join SPRI organizer Nadia Gal and former participant Nina Miville for a conversation about the Summer Pedagogical Research Institute (SPRI), a faculty-led program supporting colleagues at every stage of the pedagogical research process. We will share how SPRI helps faculty develop research questions, navigate the research process, and move toward publication. Come learn what SPRI offers, and where it might take your own teaching ideas.</p>
+</li>
+<li id="s2-table-3">
+<div class="label">Table 3</div>
+<h3>Teaching in “A Different World”</h3>
+<p class="who">Ebony Gallagher, Management</p>
+<p class="desc">The classroom is changing. AI is reshaping how students learn, communicate, and prepare for their careers, while broader social and cultural changes are influencing how students experience belonging, particularly students of color. This faculty roundtable will explore how we can complement AI with human intelligence, including critical thinking, empathy, communication, creativity, and connection. Faculty will discuss strategies to intentionally integrate AI, strengthen student belonging and engagement, navigate challenging classroom conversations, and identify practical approaches for creating inclusive, human-centered learning environments in a rapidly changing world.</p>
+</li>
+<li id="s2-table-4">
+<div class="label">Table 4</div>
+<h3>From Classroom to Client: Designing AI-Enabled Experiential Learning</h3>
+<p class="who">Alexander Korogodsky, Business Technology</p>
+<p class="desc">How can students use AI to solve real problems while remaining accountable for their thinking? Drawing on the Miami Digital-First Lab, this learning circle explores short, employer-sponsored projects that connect course concepts with authentic business challenges. Participants will discuss how to scope a four- to seven-week project, guide responsible AI use, and assess both the team’s deliverable and each student’s learning. Through a sample project and guided discussion, faculty will identify an opportunity in their own course and leave with a practical framework for designing it. We will also examine what faculty, student coaches, and employers each contribute.</p>
+</li>
+<li id="s2-table-5">
+<div class="label">Table 5</div>
+<h3>The Ripple Effects of Teaching: From Classroom Learning to Undergraduate Research</h3>
+<p class="who">Lisa Reid, Writing Studies, and Stephanie He (student), B.S. Health Science (Pre-Pharmacy)</p>
+<p class="desc">How can teaching practices help students see themselves as researchers? This faculty-student co-presentation explores how engaging with research in a course, interpreting and recontextualizing scholarly work, and using multimodal approaches to present research to peers can open pathways to undergraduate research. Drawing on a first-year writing course that led to a yearlong IRB-approved research collaboration and a scholarly article in progress, the instructor and undergraduate researcher share their perspectives on this transition. The student’s experience invites faculty to consider how their teaching, encouragement, and mentorship can shape students’ confidence, research identities, and willingness to pursue new opportunities.</p>
+</li>
+<li id="s2-table-6">
+<div class="label">Table 6</div>
+<h3>Read, Recall, Race</h3>
+<p class="who">Wesley Smith, Kinesiology</p>
+<p class="desc">Programmed Play turns course content into active practice and can be built from my lectures and readings in a single day. Students first complete an interactive reading with fill-in-the-blank questions, immediate feedback, and progress tracking. They then play a Minecraft-style quiz on the same material, in lecture order or randomized to simulate an exam. Timed modes, personal bests, and review screens drive repeated practice. The approach combines retrieval practice, immediate feedback, interleaving, and fluency training. It runs as one web page in Canvas and can replace a missed class, as it did when flooding canceled a session before an in-class essay. Each unit leads into a higher-level assignment.</p>
+</li>
+</ol>
+</section>
+</main>
+
+<footer class="end">
+<div class="band" aria-hidden="true"></div>
+</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var box = document.getElementById('desc-toggle');
+  var KEY = 'lc-show-descriptions';
+  try { if (localStorage.getItem(KEY) === '0') { box.checked = false; } } catch (e) {}
+  function apply() { body.classList.toggle('compact', !box.checked); }
+  apply();
+  box.addEventListener('change', function () {
+    apply();
+    try { localStorage.setItem(KEY, box.checked ? '1' : '0'); } catch (e) {}
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-row a'));
+  var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark() {
+    var line = window.innerHeight * 0.3;
+    var current = 0;
+    sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) { current = i; } });
+    links.forEach(function (a, i) { a.setAttribute('aria-current', i === current ? 'true' : 'false'); });
+  }
+  window.addEventListener('scroll', mark, { passive: true });
+  window.addEventListener('resize', mark);
+  mark();
+})();
+</script>
+</body>
+</html>
