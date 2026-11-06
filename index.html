@@ -105,6 +105,12 @@ section.agenda { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--n
 .nav-row a[aria-current="true"] .k { color: var(--paper); }
 .lc-tools { padding-block: 28px 0; }
 
+.status { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px; background: var(--orange-text); color: var(--paper); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.5; vertical-align: 1px; }
+.cancelled h3, .cancelled .who, .cancelled .desc { color: var(--muted); }
+.cancelled s { text-decoration-thickness: 2px; text-decoration-color: var(--orange-text); }
+.cancelled .desc { opacity: 0.75; }
+.cancelled .desc s { text-decoration-thickness: 1px; text-decoration-color: currentColor; }
+
 </style>
 </head>
 <body>
@@ -357,11 +363,11 @@ section.agenda { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--n
 <p class="who">Lisa Reid, Writing Studies, and Stephanie He (student), B.S. Health Science (Pre-Pharmacy)</p>
 <p class="desc">How can teaching practices help students see themselves as researchers? This faculty-student co-presentation explores how engaging with research in a course, interpreting and recontextualizing scholarly work, and using multimodal approaches to present research to peers can open pathways to undergraduate research. Drawing on a first-year writing course that led to a yearlong IRB-approved research collaboration and a scholarly article in progress, the instructor and undergraduate researcher share their perspectives on this transition. The student’s experience invites faculty to consider how their teaching, encouragement, and mentorship can shape students’ confidence, research identities, and willingness to pursue new opportunities.</p>
 </li>
-<li id="s2-table-6">
-<div class="label">Table 6</div>
-<h3>Read, Recall, Race</h3>
-<p class="who">Wesley Smith, Kinesiology</p>
-<p class="desc">Programmed Play turns course content into active practice and can be built from my lectures and readings in a single day. Students first complete an interactive reading with fill-in-the-blank questions, immediate feedback, and progress tracking. They then play a Minecraft-style quiz on the same material, in lecture order or randomized to simulate an exam. Timed modes, personal bests, and review screens drive repeated practice. The approach combines retrieval practice, immediate feedback, interleaving, and fluency training. It runs as one web page in Canvas and can replace a missed class, as it did when flooding canceled a session before an in-class essay. Each unit leads into a higher-level assignment.</p>
+<li id="s2-table-6" class="cancelled">
+<div class="label">Table 6 <span class="status">Cancelled</span></div>
+<h3><s>Read, Recall, Race</s></h3>
+<p class="who"><s>Wesley Smith, Kinesiology</s></p>
+<p class="desc"><s>Programmed Play turns course content into active practice and can be built from my lectures and readings in a single day. Students first complete an interactive reading with fill-in-the-blank questions, immediate feedback, and progress tracking. They then play a Minecraft-style quiz on the same material, in lecture order or randomized to simulate an exam. Timed modes, personal bests, and review screens drive repeated practice. The approach combines retrieval practice, immediate feedback, interleaving, and fluency training. It runs as one web page in Canvas and can replace a missed class, as it did when flooding canceled a session before an in-class essay. Each unit leads into a higher-level assignment.</s></p>
 </li>
 <li id="s2-table-7">
 <div class="label">Table 7</div>
